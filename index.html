@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMS Sender Identifier</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+        <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"> -->
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> -->
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="card shadow-lg p-4">
+            <h1 class="text-center display-3 mb-4">SMS Sender Identifier</h1>
+            <!-- <form> -->
+                <div class="input-group mb-3">
+                    <button class="btn btn-info btn-lg" type="button" id="infoButton" data-bs-toggle="modal" data-bs-target="#infoModal"><i class="bi bi-info-circle"></i>  Info</button>
+                    <input type="text" class="form-control form-control-lg" id="senderId" placeholder="Enter SMS Sender ID, e.g., TV-4437">
+                    <button class="btn btn-primary btn-lg" type="button" id="searchBtn"><i class="bi bi-search"></i>  Search</button>
+                    <!-- <label for="senderId" class="form-label">Enter SMS Sender ID:</label> -->
+                <!-- <input type="text" class="form-control form-control-lg" id="senderId" placeholder="Enter SMS Sender ID, e.g., TV-4437">
+                <button class="btn btn-primary btn-lg w-100" id="searchBtn">Search</button> -->
+                <!-- <div class="col-md-9">
+                    <input type="text" class="form-control form-control-lg" id="senderId" placeholder="Enter SMS Sender ID, e.g., TV-4437">
+                </div>
+                <div class="col-md-3">
+                    <button class="btn btn-primary btn-lg w-100" id="searchBtn">Search</button>
+                </div> -->
+            </div>
+            <!-- </form> -->
+            <div id="result" class="mt-4"></div>
+        </div>
+    </div>
+
+    
+        <!-- Modal -->
+        <div class="modal fade" id="infoModal" tabindex="-1" aria-labelledby="infoModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+            <!-- <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable"> -->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="infoModalLabel">Know More about SMS Sender ID format</h5>
+                        <!-- <h5 class="modal-title" id="infoModalLabel">Know More about SMS Sender ID format <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAABQCAYAAACOEfKtAAAACXBIWXMAAAsTAAALEwEAmpwYAAADVElEQVR4nO2YzU8TURTF+QtdgQkbtsJSSIiyAROIO4wfFKGNkhS3FIFSMCRSMlM7KkVapp2C0qIIbaWUFizSBI65DypoZAEYZmrOSW7SzLwmk1/Offe8V1dHURRFURRFURR17Rq91whW46UZKIDQPCzt4gwIULuacQhQI0DYuf3QgRoBgg7UajcBsIU1AgQdqNnfimxhjQBht5s4RDQChN2OYozRCBC1VAzSGgHCEQ5kNV7+St8beI9SBazKxRkIOwKs/GcAzfUSnrw00dIbRH1nQFVzbxB9Y6Z6Z/f3ORZgvnyIR74Ymu7PoOdFBKFEDtF0EYupIvR4Dj3DEfXu8egStvcPbf9eRwHMlw9xxx1GW38Iqdx3bJUPkdzcw3rhQJX8ljXpXBltLh133WFHQHQMwIcjMbS5QljL/0DxAHi7kkfI+obExi6SG3sIJ7fUM3knawSiONHu73YEQHO9pFozlS0rQLOxDBZSBbyOZjCir2FET2POzGIhtY3gUhbFgyOsZsvqP/GvuwTYN2aqPa+wf4RoekfB886swD1pYdCfUOUJWPDOfETsc1GtkXbuHo7ANR4nwObeWYTiWbXPhawtBJcycAcsDL1ahnsygacTCQxNJxVEcaeskbV6PIuWB3MEWN8ZUJNWhsXy5h58ehoD/jgGJxK40eFXNei31DNpaVkjaxdTO2jomiLAhq5pBaMKUCApgH7rFODEMUCBWwX4Ib2Dm13TBHirN/hbC0ubeqot7E9iwG/h+VRStbW0d7WFNTPHFi5VoIZI99+GSOB0iMhAUUPky5kh4p3nECmdE2MiqQJmoxn49DX4QmsqvkTOxJhPmeMYk2CMgYIoobi1X/8VpN+dBGnrJEi/SW6pZ9Ugfdulq/Myg3TlGKAcyzo8YQVx9ZyjnKyRAN3ap6PDY6iWJ8DK6YlEAIkTpTUlJMsFQvUyQTOz6B6eV+/EeU6A55ijXOmPkuOZnDAkJFevs+R3/3jc9j2vJgCWaqgIsPIPADZ52sFqvzQDBXDAeMYyLs6AAI2rGYcADQKEndsPHWgQIOhAo3YTAFvYIEDQgYb9rcgWNggQdruJQ8QgQNjtKMYYgwBRS8UgbRAgHOFAVvvlr/QpiqIoiqIoiqLqrls/AUStkHp33RO1AAAAAElFTkSuQmCC"></h5> -->
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>The SMS Sender ID format follows the pattern <strong class="font-monospace">XY-ABCDEF</strong>:</p>
+                        <ul>
+                            <li><strong class="font-monospace" >X:</strong> Denotes the Telecom Service Provider (TSP)</li>
+                            <li><strong class="font-monospace" >Y:</strong> Denotes the License Service Area (LSA)</li>
+                            <li><strong class="font-monospace" >ABCDEF:</strong> Is the header assigned to the Principal Entity</li>
+                        </ul>
+                        <p>Currently, the header length is fixed at six alphanumeric characters, with a total of nine characters when including the prefix (XY) and separator (-). However, regulations allow for headers to be up to 11 characters in total length.</p>
+                        <p>For example, in <span class="font-monospace" >VM-SBICR</span>, <span class="font-monospace" >"V"</span> represents Vodafone Idea Ltd., <span class="font-monospace" >"M"</span> represents the Mumbai service area, and <span class="font-monospace" >"SBICR"</span> is the header assigned to the Principal Entity.</p>
+
+                        <div class="container mt-4">
+                            <!-- <div class="card p-4"> -->
+                                <h4 class="card-title">For More Information</h4>
+                                <p class="card-text">
+                                    Visit the Government's website for detailed information:
+                                    <a class="" href="https://www.trai.gov.in/news-updates/compiled-list-sms-headers-sending-commercial-communication" target="_blank" rel="noopener noreferrer">
+                                        <!-- btn btn-outline-primary btn-sm btn-link<a class="btn btn-outline-info btn-sm" href="https://www.trai.gov.in/news-updates/compiled-list-sms-headers-sending-commercial-communication" target="_blank" rel="noopener noreferrer"> -->
+                                        Go to TRAI Website  <i class="bi bi-box-arrow-up-right"></i>
+                                    </a>
+                                </p>
+
+                                <h6 class="mt-3">On this page, you shall find, <mark>Compiled list of SMS Headers for sending commercial communication:</mark></h5>
+                                <ul class="list-group">
+                                    <li class="list-group-item">
+                                        <a href="https://www.trai.gov.in/sites/default/files/Detail_Header_Prefixes_16062020_0.pdf" target="_blank" class="text-decoration-none">Details & explanation of Headers & Prefixes <i class="bi bi-file-earmark-pdf"></i></a>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <a href="https://www.trai.gov.in/sites/default/files/List_SMS_Headers_16062020_0.pdf" target="_blank" class="text-decoration-none">SMS Headers list <i class="bi bi-file-earmark-pdf"></i></a>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <a href="https://www.trai.gov.in/sites/default/files/List_SMS_Headers_16062020_0.xlsx" target="_blank" class="text-decoration-none">SMS Headers list <i class="bi bi-file-earmark-excel"></i></a>
+                                    </li>
+                                </ul>
+                            <!-- </div> -->
+                        </div>
+                        
+                        <!-- <p>For more information, visit, Government's website:
+                            <a class="btn btn-outline-info" href="https://www.trai.gov.in/news-updates/compiled-list-sms-headers-sending-commercial-communication">https://www.trai.gov.in/news-updates/compiled-list-sms-headers-sending-commercial-communication</a>
+                        </p>
+                        Compiled list of SMS Headers for sending commercial communication
+                        <ul>
+                            <li>Details & explanation of Headers & Prefixes</li>
+                            <li>SMS Headers list (In pdf)</li>
+                            <li>SMS Headers list (In xlsx)</li>
+                        </ul> -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="container mt-4">
+            <div class="alert alert-warning" role="alert">
+                <!-- <h4 class="alert-heading">Developer Disclaimer</h4> -->
+                <h4 class="alert-heading display-6">Developer Disclaimer & Note</h4>
+                <p>This application was crafted by an individual developer using publicly available resources and information provided by Telecom Service providers. It is provided on "as is" basis, without any guarantees or warranties regarding accuracy, completeness, or reliability. The developer disclaims all responsibility for the content and decisions based on this application.</p>
+                <p>The developer is not liable for any damages, direct or indirect, arising from the use of this application, or the Information Provided, or mentioned. The application may be temporarily unavailable due to factors beyond the developer's control.</p>
+                <p>This application is applicable only within India.</p>
+                <p><strong>For official resources, visit the <a href="https://www.trai.gov.in/news-updates/compiled-list-sms-headers-sending-commercial-communication" target="_blank" class="text-decoration-none text-warning">TRAI website<i class="bi bi-box-arrow-up-right"></i></a> or the <a href="https://smsheader.trai.gov.in/query_header" target="_blank" class="text-decoration-none text-warning">TRAI SMS Header Query page<i class="bi bi-box-arrow-up-right"></i></a>.</strong></p>
+            </div>
+            
+            <!-- 
+            <div class="alert alert-warning" role="alert">
+
+                <p><strong>Note:</strong> This application was developed by an individual developer using publicly available resources and information provided by Telecom Service providers. The application is provided on an "as is" basis, with no guarantees or warranties regarding its accuracy, completeness, or reliability.</p>
+                <hr>
+                <p><strong>Disclaimer:</strong> The developer does not accept any responsibility or liability for the accuracy, content, completeness, legality, or reliability of the information contained in this application. The information is based on resources such as the Telecom Regulatory Authority of India (TRAI) website and other publicly available data sources.</p>
+                <p>In no circumstances shall the developer be liable for any loss or damage, including, without limitation, indirect or consequential loss or damage, or any loss or damage whatsoever arising out of or in connection with the use of this application. Every effort is made to keep the application running smoothly. However, the developer takes no responsibility and will not be liable for the application being temporarily unavailable due to technical issues beyond their control.</p>
+                <p>For official information, please refer to the <a href="https://www.trai.gov.in" target="_blank" class="text-decoration-none text-info">TRAI website</a> and the <a href="https://smsheader.trai.gov.in/query_header" target="_blank" class="text-decoration-none text-info">TRAI SMS Header Query page</a>.</p>
+            </div> -->
+        </div>
+        
+        
+    <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script> -->       <!-- May be incorrect -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/1.0.21/jquery.csv.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+    <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->
+    <script src="script.js"></script>
+</body>
+</html>
