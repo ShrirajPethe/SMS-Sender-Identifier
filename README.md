@@ -1,6 +1,9 @@
 <!-- # SMS-Sender-Identifier -->
 
 
+**[Click Here To Use SMS Sender Identifier Now](https://shrirajpethe.github.io/sms-sender-identifier/)**
+
+
 # SMS Sender Identifier
 
 A simple web app to identify the entity behind SMS sender IDs using TRAI's DLT (Distributed Ledger Technology) data, complying with TCCCPR 2018 regulations for commercial SMS communication.
