@@ -2,7 +2,7 @@
 <!-- # SMS-Sender-Identifier -->
 
 
-**[Click Here To Use SMS Sender Identifier Now](https://shrirajpethe.github.io/sms-sender-identifier/)**
+**[Click Here To Use SMS Sender Identifier Now](https://shrirajpethe.github.io/SMS-Sender-Identifier/)**
 
 
 
@@ -14,7 +14,7 @@ This project is a web application designed to identify and provide information a
 
 You can use this application directly in your web browser without any installation. Just visit the link below:
 
-**[Use SMS Sender Identifier Now](https://shrirajpethe.github.io/sms-sender-identifier/)**
+**[Use SMS Sender Identifier Now](https://shrirajpethe.github.io/SMS-Sender-Identifier/)**
 
 ## Usage
 
